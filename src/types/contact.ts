@@ -3,7 +3,7 @@ import { ContactCategory } from './contactCategory';
 export interface Contact {
   id: number;
   name: string;
-  phone: Number;
+  phone: number;
   profilePhoto?: string;
   email?: string;
   address?: string;

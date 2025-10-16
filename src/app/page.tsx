@@ -3,6 +3,7 @@
 import SplashScreen from '@/components/features/splashScreen';
 import ContactList from '@/components/ui/contactList';
 import Header from '@/components/ui/header';
+import { ProfileProvider } from '@/contexts/profileContext';
 import { Contacts } from '@/types/contacts';
 import { useEffect, useState } from 'react';
 
@@ -63,8 +64,9 @@ export default function Home() {
     <SplashScreen />
   ) : (
     <div className='w-full h-auto'>
-      <Header />
-      <ContactList contacts={samples} />
+      <ProfileProvider>
+        <ContactList contacts={samples} />
+      </ProfileProvider>
     </div>
   );
 }
