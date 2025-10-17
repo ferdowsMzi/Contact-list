@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+//splash screen appear while loading the page
+
 const SplashScreen = () => {
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-white z-50'>

@@ -5,10 +5,10 @@ import { useProfile } from '@/contexts/profileContext';
 
 interface ContactCardProps {
   contact: Contact;
-  onOpenProfile: (contact: Contact) => void;
+  onSelect: () => void;
 }
 
-const ContactCard = ({ contact, onOpenProfile }: ContactCardProps) => {
+const ContactCard = ({ contact, onSelect }: ContactCardProps) => {
   const { isAnyProfileOpen } = useProfile();
 
   return (
@@ -16,18 +16,11 @@ const ContactCard = ({ contact, onOpenProfile }: ContactCardProps) => {
       className={`flex flex-row items-center justify-between w-full py-[1rem] xl:px-8 border-t-[1px] border-gray-400 cursor-pointer gap-[10px] ${
         isAnyProfileOpen ? 'px-2' : 'px-8'
       }`}
-      onClick={() => {
-        onOpenProfile(contact);
-      }}
+      onClick={onSelect}
       role='button'
       tabIndex={0}
-      aria-label={`View ${contact.name}'s profile`}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          onOpenProfile(contact);
-        }
-      }}
     >
+      {/* profile photo  */}
       <div className='relative'>
         {contact.favorite && (
           <div className='absolute top-0 left-0 z-10'>
@@ -67,6 +60,7 @@ const ContactCard = ({ contact, onOpenProfile }: ContactCardProps) => {
         </div>
       </div>
 
+      {/* name and category */}
       <div className='flex-grow px-4'>
         <div className='flex flex-col lg:flex-row lg:items-start md:gap-3 items-start'>
           <span

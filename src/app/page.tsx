@@ -1,54 +1,9 @@
 'use client';
-
 import SplashScreen from '@/components/features/splashScreen';
-import ContactList from '@/components/ui/contactList';
-import Header from '@/components/ui/header';
+import ContactList from '@/components/contacts/contactList';
 import { ProfileProvider } from '@/contexts/profileContext';
-import { Contacts } from '@/types/contacts';
 import { useEffect, useState } from 'react';
-
-const samples: Contacts = [
-  {
-    id: 1,
-    name: 'Ferdows Mazraavi',
-    profilePhoto: '',
-    email: 'Ferdows.MZI@gmail.com',
-    phone: 989398513725,
-    address: 'Iran, Tehran province',
-    category: 'Family',
-    favorite: true,
-  },
-  {
-    id: 2,
-    name: 'Fereshteh Ebadi',
-    profilePhoto: '',
-    email: 'Fereshteh.ebadi@gmail.com',
-    phone: 989375674777,
-    address: 'Iran, Kerman province',
-    category: 'Business',
-    favorite: false,
-  },
-  {
-    id: 3,
-    name: 'Arvin Mohammadi',
-    profilePhoto: '',
-    email: 'Ar.moh@gmail.com',
-    phone: 989375674777,
-    address: 'Iran, Ahwaz',
-    category: 'Others',
-    favorite: true,
-  },
-  {
-    id: 4,
-    name: 'Ali Keyhani',
-    profilePhoto: '',
-    email: 'ali.key@gmail.com',
-    phone: 989375674777,
-    address: 'Iran, Khorasan province',
-    category: 'Friends',
-    favorite: false,
-  },
-];
+import { ContactProvider } from '@/contexts/contactContext';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -65,7 +20,9 @@ export default function Home() {
   ) : (
     <div className='w-full h-auto'>
       <ProfileProvider>
-        <ContactList contacts={samples} />
+        <ContactProvider>
+          <ContactList />
+        </ContactProvider>
       </ProfileProvider>
     </div>
   );

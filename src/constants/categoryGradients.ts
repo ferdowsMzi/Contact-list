@@ -1,3 +1,5 @@
+//each category has a gradient to be used as bg gradient
+
 const categoryGradients = {
   Family: 'bg-gradient-to-r from-green-300 to-emerald-500',
   Friends: 'bg-gradient-to-r from-purple-300 to-pink-500',
