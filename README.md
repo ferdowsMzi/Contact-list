@@ -1,4 +1,4 @@
-# Frontend Challenge Results
+# About The Results
 
 I tackled this frontend challenge and got the main functionality working! The app does what it's supposed to do and covers the key requirements I was given.
 
