@@ -11,7 +11,9 @@ interface ContactProfileHeaderProps {
   onEdit: () => void;
   onSave: (e: React.FormEvent) => void;
   onCancel: () => void;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
   error?: string;
   profileData: {
     name: string;
